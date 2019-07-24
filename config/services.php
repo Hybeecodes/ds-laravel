@@ -43,5 +43,11 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
+    
+    'github' => [
+        'client_id' => '086e90073714d69b8a10',
+        'client_secret' => '3966bf65e9c4b1fad0433e9dd0e27bbdd174fe17',
+        'redirect' => 'http://localhost:8000/auth/github/callback',
+    ],
 
 ];
