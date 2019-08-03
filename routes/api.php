@@ -31,11 +31,19 @@ Route::group(['prefix' => 'auth'], function() {
 });
 
 Route::group(['middleware' => ['auth:api']], function () {
-    Route::post('stories', 'StoryController@createStory');
+    Route::post('stories', 'StoryController@create');
     Route::put('stories/{story_id}', 'StoryController@update');
     Route::get('stories', 'StoryController@getAll');
     Route::get('stories/{story_id}', 'StoryController@getOne');
     Route::delete('stories/{story_id}', 'StoryController@delete');
+    Route::get('stories/{story_id}/withComments', 'StoryController@getStoryWithComment');
+    Route::post('stories/{story_id}/comments', 'CommentController@new');
+    Route::get('stories/popular', 'StoryController@popular');
+    Route::get('stories/tag/{tag_id}', 'StoryController@getStoryByTag');
+    Route::post('stories/{story_id}/views', 'StoryController@newView');
+    Route::get('stories/{story_id}/views', 'StoryController@getViews');
+    Route::post('stories/{story_id}/claps', 'StoryController@newClap');
+    Route::get('stories/{story_id}/claps', 'StoryController@getClaps');
 });
 
 Route::group([

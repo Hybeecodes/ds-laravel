@@ -21,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\Auth\UserActivationEmail' => [
             'App\Listeners\Auth\SendActivatioEmail'
+        ],
+        'App\Events\StoryCreated' => [
+            'App\Listeners\CreateStoryCreatedNotification',
         ]
     ];
 

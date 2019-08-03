@@ -37,7 +37,7 @@ class AuthTest extends TestCase
     User::create([
         'name' => 'test',
         'email'=>'test@gmail.com',
-        'password' => bcrypt('secret1234')
+        'password' => bcrypt('secret')
     ]);
     //attempt login
     $response = $this->json('POST',route('api.login'),[
